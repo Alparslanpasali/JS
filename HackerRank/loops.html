@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id = "input" type="text" >
+    <button id = "button" >button</button>
+    <p id = "del"></p>
+    <p id = "demo"></p>
+    <Script>
+        document.querySelector("#button").addEventListener("click",vowelsAndConsonants);
+        // let s = document.querySelector("#input");
+        function vowelsAndConsonants() {
+            let userInput = document.querySelector("#input").value;
+            
+            const vowels = "aeiou";
+            var total = [];
+            var consonants = [];
+            for (var i = 0; i<userInput.length; i++){
+                if(vowels.includes(userInput[i])){
+                    total += userInput[i] + "\n";
+                }else {
+                    consonants += userInput[i] + "\n";
+                }
+            }
+            document.querySelector("#del").innerHTML = total;
+            document.querySelector("#demo").innerHTML = consonants;
+            
+        };
+    </Script>
+</body>
+</html>
