@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input" type="text">
+    <button id="button" type="button">Get Letter</button>
+    <p id="result" ></p>
+    <script>
+        document.getElementById("button").addEventListener("click", getLetter);
+        
+        function getLetter(){
+            let userInput = document.getElementById("input").value
+            let letter;
+
+            switch (true){
+                case "aeuio".includes(userInput[0]):
+                    letter = "A";
+                    break;
+                case "bcdfg".includes(userInput[0]):
+                    letter = "B";
+                    break;
+                case "hjklm".includes(userInput[0]):
+                    letter = "C";
+                    break;
+                case "npqrstvwxyz".includes(userInput[0]):
+                    letter = "D";
+                    break;
+            };
+            
+            document.getElementById("result").innerHTML = letter;
+        };
+    </script>
+    <!-- 
+    function getLetter(s) {
+        let letter;
+            
+        if (/^[aeiou]/.test(s.charAt(s[1]))){
+            return letter = "A";
+        }else if(/^[bcdfg]/.test(s.charAt(s[1]))){
+            return letter = "B";
+        }else if(/^[hjklm]/.test(s.charAt(s[1]))){
+            return letter = "C";
+        }else if(/^[npqrstvwcyz]/.test(s.charAt(s[1]))){
+            return letter = "D"
+        }else {
+            return letter = "It's not a letter."
+        }
+        return letter;
+    } -->
+</body>
+</html>
