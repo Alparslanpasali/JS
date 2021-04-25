@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input" type="number">
+    <button id="addNums" >add number</button>
+    <button id="sort" >get second largest value</button>
+    <p id="arr" ></p>
+    <p id="SecLargNum" ></p>
+    <script>
+        document.getElementById("addNums").addEventListener("click",addNum);
+        document.getElementById("sort").addEventListener("click",getSecondLargest);
+        
+        let userArr = [];
+        
+        function addNum(){
+            let lastNumElement = document.getElementById("input");
+            let lastNum = lastNumElement.value
+            userArr.push(lastNum);
+            document.getElementById("arr").innerHTML = "Your Array: " + userArr;
+            lastNumElement.focus();
+            lastNumElement.value = "";
+        }
+
+        function getSecondLargest() {
+            userArr.sort(function(a,b){return b - a});
+            while (userArr[0] == userArr[1]){
+                userArr.shift();
+            }
+            document.getElementById("SecLargNum").innerHTML = "The second largest number: " + userArr[1];
+        }
+
+    </script>
+</body>
+</html>
