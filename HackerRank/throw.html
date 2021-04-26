@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input" type="number">
+    <button id="button">Check</button>
+    <p id="demo"></p>
+
+    <script>
+        let userNumElement = document.getElementById("input")
+        let response = document.getElementById("demo");
+        
+        document.getElementById("button").addEventListener("click", isPositive);
+        
+        function isPositive() {
+
+            let userNum = userNumElement.value;
+            if (userNum == 0) throw response.innerHTML ="Zero Error";
+            if (userNum < 0) throw response.innerHTML = "Negative Error";
+            response.innerHTML = "YES"
+            userNumElement.focus();
+            userNumElement.value = "";
+            
+        }
+
+    </script>
+</body>
+</html>
