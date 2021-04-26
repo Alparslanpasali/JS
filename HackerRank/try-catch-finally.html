@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input" type="text">
+    <button id="button">Reverse</button>
+    <p id="demo"></p>
+    <script>
+        document.getElementById("button").addEventListener("click",reverseString);
+
+        function reverseString(){
+            var s = document.getElementById("input").value;
+            try{
+                 s = s.split("").reverse().join("");
+            }
+            catch(e){
+                console.log(e.message);
+            }
+            finally{
+                console.log(s);
+            }
+            return document.getElementById("demo").innerHTML = s
+        }
+
+    </script>
+</body>
+</html>
